@@ -1,20 +1,27 @@
 #include "read_input_day2.h"
 
 #include <fstream>
+#include <ranges>
+#include <string>
 
-std::pair<std::vector<int>, std::vector<int>> read_input_day2(const std::filesystem::path& path)
+std::vector<levels> read_input_day2(const std::filesystem::path& path)
 {
-    auto vec1 = std::vector<int>();
-    auto vec2 = std::vector<int>();
-
     auto file = std::ifstream(path);
-    auto a = 0;
-    auto b = 0;
-    while (file >> a >> b)
+
+    auto vec_of_levels = std::vector<levels>();
+    auto row_data = std::string{};
+    while (std::getline(file, row_data))
     {
-        vec1.push_back(a);
-        vec2.push_back(b);
+        auto row = std::stringstream(row_data);
+        auto val = std::string{};
+        auto level = levels{};
+        while (std::getline(row, val, ' '))
+        {
+            level.level_data.push_back(std::stoi(val));
+        }
+
+        vec_of_levels.push_back(level);
     }
 
-    return { vec1, vec2 };
+    return vec_of_levels;
 }
