@@ -44,7 +44,7 @@ std::ptrdiff_t get_number_of_valid_reports_dampened(const std::span<const std::v
     auto num_valid_reports = std::ssize(data);
     for (const auto& levels : data)
     {
-        if (!is_report_valid(levels) && !(at_least_one_modified_input_is_valid(levels)))
+        if (!is_report_valid(levels) && !at_least_one_modified_input_is_valid(levels))
         {
             --num_valid_reports;
         }

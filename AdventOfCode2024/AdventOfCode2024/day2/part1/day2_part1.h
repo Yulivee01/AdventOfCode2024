@@ -1,5 +1,4 @@
 #pragma once
-#include "../read_input_day2.h"
 
 #include <span>
 #include <vector>
