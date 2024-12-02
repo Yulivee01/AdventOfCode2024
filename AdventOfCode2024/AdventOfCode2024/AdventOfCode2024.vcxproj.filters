@@ -24,7 +24,7 @@
     <ClCompile Include="day1\part1\day1_part1_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="day1\read_input.cpp">
+    <ClCompile Include="day1\read_input_day1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="day1\part2\day1_part2.cpp">
@@ -33,19 +33,44 @@
     <ClCompile Include="day1\part2\day1_part2_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="day2\part1\day2_part1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day2\part1\day2_part1_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day2\part2\day2_part2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day2\part2\day2_part2_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day2\read_input_day2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\part1\day1_part1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="day1\read_input.h">
+    <ClInclude Include="day1\read_input_day1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="day1\part2\day1_part2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="day2\part1\day2_part1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="day2\part2\day2_part2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="day2\read_input_day2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="day1\input.txt" />
+    <Text Include="day1\input_day1.txt" />
+    <Text Include="day2\input_day2.txt" />
   </ItemGroup>
 </Project>
