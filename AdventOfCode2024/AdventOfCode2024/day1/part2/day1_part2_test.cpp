@@ -1,6 +1,5 @@
 #include "day1_part2.h"
-
-#include "../read_input.h"
+#include "../read_input_day1.h"
 
 #include <gtest/gtest.h>
 
@@ -15,6 +14,6 @@ TEST(day1_part2, test_with_aoc_example)
 
 TEST(day1_part2, test_with_full_input)
 {
-    const auto [input1, input2] = read_input("day1/input.txt");
+    const auto [input1, input2] = read_input("day1/input_day1.txt");
     EXPECT_EQ(20520794, calc_similarity_score(input1, input2));
 }
