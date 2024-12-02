@@ -139,14 +139,23 @@
     <ClCompile Include="day1\part2\day1_part2.cpp" />
     <ClCompile Include="day1\part2\day1_part2_test.cpp" />
     <ClCompile Include="day1\read_input_day1.cpp" />
+    <ClCompile Include="day2\part1\day2_part1.cpp" />
+    <ClCompile Include="day2\part1\day2_part1_test.cpp" />
+    <ClCompile Include="day2\part2\day2_part2.cpp" />
+    <ClCompile Include="day2\part2\day2_part2_test.cpp" />
+    <ClCompile Include="day2\read_input_day2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\part1\day1_part1.h" />
     <ClInclude Include="day1\part2\day1_part2.h" />
     <ClInclude Include="day1\read_input_day1.h" />
+    <ClInclude Include="day2\part1\day2_part1.h" />
+    <ClInclude Include="day2\part2\day2_part2.h" />
+    <ClInclude Include="day2\read_input_day2.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="day1\input_day1.txt" />
+    <Text Include="day2\input_day2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

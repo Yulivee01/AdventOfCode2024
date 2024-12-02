@@ -14,6 +14,6 @@ TEST(day1_part1, test_with_aoc_example)
 
 TEST(day1_part1, test_with_full_input)
 {
-    const auto [input1, input2] = read_input("day1/input_day1.txt");
+    const auto [input1, input2] = read_input_day1("day1/input_day1.txt");
     EXPECT_EQ(1765812, total_distance(input1, input2));
 }

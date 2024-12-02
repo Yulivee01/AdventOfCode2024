@@ -4,4 +4,4 @@
 #include <utility>
 #include <vector>
 
-std::pair<std::vector<int>, std::vector<int>> read_input(const std::filesystem::path& path);
+std::pair<std::vector<int>, std::vector<int>> read_input_day1(const std::filesystem::path& path);

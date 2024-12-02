@@ -1,8 +1,8 @@
-#include "read_input_day1.h"
+#include "read_input_day2.h"
 
 #include <fstream>
 
-std::pair<std::vector<int>, std::vector<int>> read_input_day1(const std::filesystem::path& path)
+std::pair<std::vector<int>, std::vector<int>> read_input_day2(const std::filesystem::path& path)
 {
     auto vec1 = std::vector<int>();
     auto vec2 = std::vector<int>();
