@@ -1,7 +1,5 @@
 #include "day4_part1.h"
 
-#include <ranges>
-
 auto search_around_x(const ptrdiff_t i0, const ptrdiff_t j0, const std::vector<std::string>& input)
 {
     const auto in_len = std::ssize(input);

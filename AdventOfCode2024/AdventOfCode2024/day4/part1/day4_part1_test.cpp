@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-TEST(count_xmas, test_with_aoc_example)
+TEST(day_4_part1, test_with_aoc_example)
 {
     const auto input = std::vector<std::string>{
     "MMMSXXMASM",
