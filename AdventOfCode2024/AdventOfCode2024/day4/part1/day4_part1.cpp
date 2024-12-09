@@ -1,47 +1,58 @@
 #include "day4_part1.h"
 
+#include <iostream>
+#include <ranges>
+
 auto search_around_x(const ptrdiff_t i0, const ptrdiff_t j0, const std::vector<std::string>& input)
 {
-    const auto in_len = std::ssize(input);
-    const auto ip1 = i0 + 1;
-    const auto ip2 = i0 + 2;
-    const auto ip3 = i0 + 3;
-    const auto im1 = i0 - 1;
-    const auto im2 = i0 - 2;
-    const auto im3 = i0 - 3;
+    auto count = 0;
 
-    const auto str_len = std::ssize(input[i0]);
-    const auto jp1 = j0 + 1;
-    const auto jp2 = j0 + 2;
-    const auto jp3 = j0 + 3;
-    const auto jm1 = j0 - 1;
-    const auto jm2 = j0 - 2;
-    const auto jm3 = j0 - 3;
+    // down
+    count += (input
+        | std::views::drop(i0)
+        | std::views::transform([&](const auto& row) {return row[j0]; })
+        | std::views::take(4)
+        | std::ranges::to<std::string>()).contains("XMAS");
 
-    int count = 0;
-    if (i0 > 2) count += std::string{ input[i0][j0], input[im1][j0], input[im2][j0], input[im3][j0] }.contains("XMAS");
-    if (j0 > 2) count += std::string{ input[i0][j0], input[i0][jm1], input[i0][jm2], input[i0][jm3] }.contains("XMAS");
-    if ((i0 > 2) && (j0 > 2)) count += std::string{ input[i0][j0], input[im1][jm1], input[im2][jm2], input[im3][jm3] }.contains("XMAS");
-    if (i0 < in_len - 3) count += std::string{ input[i0][j0], input[ip1][j0], input[ip2][j0], input[ip3][j0] }.contains("XMAS");
-    if (j0 < str_len - 3) count += std::string{ input[i0][j0], input[i0][jp1], input[i0][jp2], input[i0][jp3] }.contains("XMAS");
-    if ((i0 < in_len - 3) && (j0 < str_len - 3)) count += std::string{ input[i0][j0], input[ip1][jp1], input[ip2][jp2], input[ip3][jp3] }.contains("XMAS");
-    if ((i0 < in_len - 3) && (j0 > 2)) count += std::string{ input[i0][j0], input[ip1][jm1], input[ip2][jm2], input[ip3][jm3] }.contains("XMAS");
-    if ((i0 > 2) && (j0 < str_len - 3)) count += std::string{ input[i0][j0], input[im1][jp1], input[im2][jp2], input[im3][jp3] }.contains("XMAS");
+    // right
+    count += (input[i0]
+        | std::views::drop(j0)
+        | std::views::take(4)
+        | std::ranges::to<std::string>()).contains("XMAS");
+
+    // down right
+    if ((i0 + 3 < std::ssize(input)) && (j0 + 3 < std::ssize(input.front())))
+    {
+        count += (std::views::iota(0, 4)
+            | std::views::transform([&](const auto& i) {return input[i0 + i][j0 + i]; })
+            | std::ranges::to<std::string>()).contains("XMAS");
+    }
+
+    // down left
+    if ((i0 + 3 < std::ssize(input)) && (j0 - 3 >= 0))
+    {
+        count += (std::views::iota(0, 4)
+            | std::views::transform([&](const auto& i) {return input[i0 + i][j0 - i]; })
+            | std::ranges::to<std::string>()).contains("XMAS");
+    }
 
     return count;
 }
 
 int count_xmas(const std::vector<std::string>& input)
 {
+    const auto reversed_input = input
+        | std::views::reverse
+        | std::views::transform([](const auto& str) { return str | std::views::reverse | std::ranges::to<std::string>(); })
+        | std::ranges::to<std::vector>();
+
     int count = 0;
     for (ptrdiff_t i = 0; i < std::ssize(input); ++i)
     {
-        for (ptrdiff_t j = 0; j < std::ssize(input[i]); ++j)
+        for (ptrdiff_t j = 0; j < std::ssize(input.front()); ++j)
         {
-            if (input[i][j] == 'X')
-            {
-                count += search_around_x(i, j, input);
-            }
+            if (input[i][j] == 'X') count += search_around_x(i, j, input);
+            if (reversed_input[i][j] == 'X') count += search_around_x(i, j, reversed_input);
         }
     }
 
