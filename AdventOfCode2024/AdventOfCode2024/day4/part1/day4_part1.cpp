@@ -3,36 +3,36 @@
 #include <iostream>
 #include <ranges>
 
-auto search_around_x(const ptrdiff_t i0, const ptrdiff_t j0, const std::vector<std::string>& input)
+auto search_around_x(const ptrdiff_t i, const ptrdiff_t j, const std::vector<std::string>& input)
 {
     auto count = 0;
 
     // down
     count += (input
-        | std::views::drop(i0)
-        | std::views::transform([&](const auto& row) {return row[j0]; })
+        | std::views::drop(i)
+        | std::views::transform([&](const auto& row) {return row[j]; })
         | std::views::take(4)
         | std::ranges::to<std::string>()).contains("XMAS");
 
     // right
-    count += (input[i0]
-        | std::views::drop(j0)
+    count += (input[i]
+        | std::views::drop(j)
         | std::views::take(4)
         | std::ranges::to<std::string>()).contains("XMAS");
 
     // down right
-    if ((i0 + 3 < std::ssize(input)) && (j0 + 3 < std::ssize(input.front())))
+    if ((i + 3 < std::ssize(input)) && (j + 3 < std::ssize(input.front())))
     {
         count += (std::views::iota(0, 4)
-            | std::views::transform([&](const auto& i) {return input[i0 + i][j0 + i]; })
+            | std::views::transform([&](const auto& offset) {return input[i + offset][j + offset]; })
             | std::ranges::to<std::string>()).contains("XMAS");
     }
 
     // down left
-    if ((i0 + 3 < std::ssize(input)) && (j0 - 3 >= 0))
+    if ((i + 3 < std::ssize(input)) && (j - 3 >= 0))
     {
         count += (std::views::iota(0, 4)
-            | std::views::transform([&](const auto& i) {return input[i0 + i][j0 - i]; })
+            | std::views::transform([&](const auto& offset) {return input[i + offset][j - offset]; })
             | std::ranges::to<std::string>()).contains("XMAS");
     }
 
