@@ -48,6 +48,36 @@
     <ClCompile Include="day2\read_input_day2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="day3\part1\day3_part1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day3\part1\day3_part1_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day3\part2\day3_part2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day3\part2\day3_part2_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day3\read_input_day3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day4\part1\day4_part1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day4\part1\day4_part1_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day4\part2\day4_part2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day4\part2\day4_part2_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day4\read_input_day4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\part1\day1_part1.h">
@@ -68,9 +98,29 @@
     <ClInclude Include="day2\read_input_day2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="day3\day3_part1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="day3\part2\day3_part2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="day3\read_input_day3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="day4\part1\day4_part1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="day4\part2\day4_part2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="day4\read_input_day4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="day1\input_day1.txt" />
     <Text Include="day2\input_day2.txt" />
+    <Text Include="day3\input_day3.txt" />
+    <Text Include="day4\input_day4.txt" />
   </ItemGroup>
 </Project>
