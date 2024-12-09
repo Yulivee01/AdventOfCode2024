@@ -1,15 +1,21 @@
 #include "day4_part2.h"
 
-auto search_around_a(const ptrdiff_t i0, const ptrdiff_t j0, const std::vector<std::string>& input)
+namespace
 {
-    int count = 0;
-    if ((std::string{ input[i0 - 1][j0 - 1],input[i0][j0], input[i0 + 1][j0 + 1] }.contains("MAS") || std::string{ input[i0 - 1][j0 - 1],input[i0][j0], input[i0 + 1][j0 + 1] }.contains("SAM"))
-        && (std::string{ input[i0 - 1][j0 + 1], input[i0][j0], input[i0 + 1][j0 - 1] }.contains("MAS") || std::string{ input[i0 - 1][j0 + 1], input[i0][j0], input[i0 + 1][j0 - 1] }.contains("SAM")))
+    auto search_around_a(const ptrdiff_t i, const ptrdiff_t j, const std::vector<std::string>& input)
     {
-        ++count;
-    }
+        int count = 0;
+        const auto diagonal_left_right = std::string{ input[i - 1][j - 1], input[i][j], input[i + 1][j + 1] };
+        const auto diagonal_right_left = std::string{ input[i - 1][j + 1], input[i][j], input[i + 1][j - 1] };
 
-    return count;
+        if ((diagonal_left_right.contains("MAS") || diagonal_left_right.contains("SAM"))
+            && (diagonal_right_left.contains("MAS") || diagonal_right_left.contains("SAM")))
+        {
+            ++count;
+        }
+
+        return count;
+    }
 }
 
 int count_x_mas(const std::vector<std::string>& input)
