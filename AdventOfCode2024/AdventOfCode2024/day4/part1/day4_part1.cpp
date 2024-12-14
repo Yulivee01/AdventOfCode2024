@@ -1,5 +1,6 @@
 #include "day4_part1.h"
 
+#include <algorithm>
 #include <iostream>
 #include <ranges>
 
@@ -49,15 +50,16 @@ int count_xmas(const std::vector<std::string>& input)
         | std::views::transform([](const auto& str) { return str | std::views::reverse | std::ranges::to<std::string>(); })
         | std::ranges::to<std::vector>();
 
-    int count = 0;
-    for (ptrdiff_t i = 0; i < std::ssize(input); ++i)
-    {
-        for (ptrdiff_t j = 0; j < std::ssize(input.front()); ++j)
-        {
-            if (input[i][j] == 'X') count += search_around_x(i, j, input);
-            if (reversed_input[i][j] == 'X') count += search_around_x(i, j, reversed_input);
-        }
-    }
+    return std::ranges::fold_left(std::views::cartesian_product(
+        std::views::iota(ptrdiff_t{ 0 }, std::ssize(input)),
+        std::views::iota(ptrdiff_t{ 0 }, std::ssize(input.front())))
+        | std::views::transform([&](const auto& coordinates)
+            {
+                const auto [i, j] = coordinates;
+                auto count = 0;
+                if (input[i][j] == 'X') count += search_around_x(i, j, input);
+                if (reversed_input[i][j] == 'X') count += search_around_x(i, j, reversed_input);
 
-    return count;
+                return count;
+            }), 0, std::plus{});
 }
