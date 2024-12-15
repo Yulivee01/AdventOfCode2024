@@ -154,6 +154,11 @@
     <ClCompile Include="day4\part2\day4_part2.cpp" />
     <ClCompile Include="day4\part2\day4_part2_test.cpp" />
     <ClCompile Include="day4\read_input_day4.cpp" />
+    <ClCompile Include="day5\part1\day5_part1.cpp" />
+    <ClCompile Include="day5\part1\day5_part1_test.cpp" />
+    <ClCompile Include="day5\part2\day5_part2.cpp" />
+    <ClCompile Include="day5\part2\day5_part2_test.cpp" />
+    <ClCompile Include="day5\read_input_day5.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\part1\day1_part1.h" />
@@ -168,12 +173,17 @@
     <ClInclude Include="day4\part1\day4_part1.h" />
     <ClInclude Include="day4\part2\day4_part2.h" />
     <ClInclude Include="day4\read_input_day4.h" />
+    <ClInclude Include="day5\part1\day5_part1.h" />
+    <ClInclude Include="day5\part2\day5_part2.h" />
+    <ClInclude Include="day5\read_input_day5.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="day1\input_day1.txt" />
     <Text Include="day2\input_day2.txt" />
     <Text Include="day3\input_day3.txt" />
     <Text Include="day4\input_day4.txt" />
+    <Text Include="day5\input_day5_1.txt" />
+    <Text Include="day5\input_day5_2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
