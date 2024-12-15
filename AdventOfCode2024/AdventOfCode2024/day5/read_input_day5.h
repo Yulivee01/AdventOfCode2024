@@ -1,7 +1,8 @@
 #pragma once
 
 #include <filesystem>
-#include <string>
+#include <utility>
 #include <vector>
 
-std::vector<std::string> read_input_day5(const std::filesystem::path& path);
+std::vector<std::pair<int, int>> read_rules(const std::filesystem::path& path);
+std::vector<std::vector<int>> read_updates(const std::filesystem::path& path);
