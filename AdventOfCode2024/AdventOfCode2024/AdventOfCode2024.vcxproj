@@ -164,6 +164,7 @@
     <ClCompile Include="day6\part2\day6_part2.cpp" />
     <ClCompile Include="day6\part2\day6_part2_test.cpp" />
     <ClCompile Include="day6\read_input_day6.cpp" />
+    <ClCompile Include="day6\utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\part1\day1_part1.h" />
@@ -184,6 +185,7 @@
     <ClInclude Include="day6\part1\day6_part1.h" />
     <ClInclude Include="day6\part2\day6_part2.h" />
     <ClInclude Include="day6\read_input_day6.h" />
+    <ClInclude Include="day6\utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="day1\input_day1.txt" />

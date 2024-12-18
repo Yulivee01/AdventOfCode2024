@@ -108,6 +108,9 @@
     <ClCompile Include="day6\read_input_day6.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="day6\utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\part1\day1_part1.h">
@@ -162,6 +165,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="day6\read_input_day6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="day6\utilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
