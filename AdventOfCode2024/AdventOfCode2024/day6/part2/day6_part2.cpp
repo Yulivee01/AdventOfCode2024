@@ -2,28 +2,7 @@
 #include "../utilities.h"
 
 #include <algorithm>
-#include <iostream>
 #include <optional>
-
-namespace
-{
-    direction opposite(const direction& dir)
-    {
-        switch (dir)
-        {
-        case direction::up:
-            return direction::down;
-        case direction::down:
-            return direction::up;
-        case direction::left:
-            return direction::right;
-        case direction::right:
-            return direction::left;
-        default:
-            return direction::up;
-        }
-    }
-}
 
 int count_loops(std::vector<std::string>& map)
 {
@@ -39,13 +18,12 @@ int count_loops(std::vector<std::string>& map)
             auto position = start_position;
             auto dir = direction::up;
 
-            // initialize state
-            auto state = std::vector<std::vector<std::pair<std::optional<direction>, int>>>(map.size());
-            for (auto& s : state) s.resize(map.front().size());
+            // initialize position counter
+            auto count_pos = std::vector<std::vector<int>>(map.size());
+            for (auto& s : count_pos) s.resize(map.front().size());
 
             // skip if i and y are at start position -> no obstacle can be placed at start position
-            if (start_position.x == i && start_position.y == j)
-                continue;
+            if (start_position.x == i && start_position.y == j) continue;
 
             // save original value and set obstacle
             auto org_val = map[i][j];
@@ -64,17 +42,15 @@ int count_loops(std::vector<std::string>& map)
                     rotate(dir);
                 }
 
-                // test if we are in a loop by checking if we have been here before, going in the same direction or if we are going back and forth
-                if (state[position.x][position.y].first.has_value()
-                    && (state[position.x][position.y].first == dir || state[position.x][position.y].second > 2))
+                // test if we are in a loop or going back and forth
+                if (count_pos[position.x][position.y] > 2)
                 {
                     ++loops;
                     break;
                 }
 
-                // set state and update counter
-                state[position.x][position.y].first = dir;
-                state[position.x][position.y].second++;
+                // update counter
+                count_pos[position.x][position.y]++;
 
                 // move forward
                 move(position, dir);
