@@ -44,7 +44,8 @@ int count_loops(std::vector<std::string>& map)
             for (auto& s : state) s.resize(map.front().size());
 
             // skip if i and y are at start position -> no obstacle can be placed at start position
-            if (start_position.x == i && start_position.y == j) break;
+            if (start_position.x == i && start_position.y == j)
+                continue;
 
             // save original value and set obstacle
             auto org_val = map[i][j];
@@ -65,8 +66,7 @@ int count_loops(std::vector<std::string>& map)
 
                 // test if we are in a loop by checking if we have been here before, going in the same direction or if we are going back and forth
                 if (state[position.x][position.y].first.has_value()
-                    && (state[position.x][position.y].first == dir
-                        || (state[position.x][position.y].first == opposite(dir) && state[position.x][position.y].second > 2)))
+                    && (state[position.x][position.y].first == dir || state[position.x][position.y].second > 2))
                 {
                     ++loops;
                     break;
