@@ -165,6 +165,11 @@
     <ClCompile Include="day6\part2\day6_part2_test.cpp" />
     <ClCompile Include="day6\read_input_day6.cpp" />
     <ClCompile Include="day6\utilities.cpp" />
+    <ClCompile Include="day7\part1\day7_part1.cpp" />
+    <ClCompile Include="day7\part1\day7_part1_test.cpp" />
+    <ClCompile Include="day7\part2\day7_part2.cpp" />
+    <ClCompile Include="day7\part2\day7_part2_test.cpp" />
+    <ClCompile Include="day7\read_input_day7.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\part1\day1_part1.h" />
@@ -186,6 +191,10 @@
     <ClInclude Include="day6\part2\day6_part2.h" />
     <ClInclude Include="day6\read_input_day6.h" />
     <ClInclude Include="day6\utilities.h" />
+    <ClInclude Include="day7\calibration.h" />
+    <ClInclude Include="day7\part1\day7_part1.h" />
+    <ClInclude Include="day7\part2\day7_part2.h" />
+    <ClInclude Include="day7\read_input_day7.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="day1\input_day1.txt" />
@@ -195,6 +204,7 @@
     <Text Include="day5\input_day5_1.txt" />
     <Text Include="day5\input_day5_2.txt" />
     <Text Include="day6\input_day6.txt" />
+    <Text Include="day7\input_day7.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
