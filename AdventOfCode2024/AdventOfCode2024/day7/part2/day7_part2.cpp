@@ -70,7 +70,7 @@ namespace
         for (size_t i = 0; i < cal.numbers.size() - 1; ++i)
         {
             operator_combinations[i] = 0;
-            auto op_save = operator_combinations;
+            const auto opp_combinations_save = operator_combinations;
             for (size_t j = i + 1; j < cal.numbers.size() - 1; ++j)
             {
                 operator_combinations[j] = 1;
@@ -96,7 +96,7 @@ namespace
                 } while (std::ranges::next_permutation(operator_combinations).found);
             }
 
-            operator_combinations = op_save;
+            operator_combinations = opp_combinations_save;
         }
 
         return false;
