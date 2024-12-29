@@ -23,7 +23,7 @@ TEST(day_8_part2, test_with_simple_example)
 TEST(day_8_part2, test_with_aoc_example)
 {
     const auto input = std::string{
- "............"
+	"............"
     "........0..."
     ".....0......"
     ".......0...."
