@@ -126,6 +126,21 @@
     <ClCompile Include="day7\read_input_day7.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="day8\part1\day8_part1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day8\part1\day8_part1_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day8\part2\day8_part2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day8\part2\day8_part2_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day8\read_input_day8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\part1\day1_part1.h">
@@ -197,6 +212,15 @@
     <ClInclude Include="day7\calibration.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="day8\part1\day8_part1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="day8\part2\day8_part2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="day8\read_input_day8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="day1\input_day1.txt" />
@@ -207,5 +231,6 @@
     <Text Include="day5\input_day5_2.txt" />
     <Text Include="day6\input_day6.txt" />
     <Text Include="day7\input_day7.txt" />
+    <Text Include="day8\input_day8.txt" />
   </ItemGroup>
 </Project>
