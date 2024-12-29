@@ -12,8 +12,8 @@ size_t count_antinodes(const std::string& input, const ptrdiff_t row_size)
     auto unique_symbols = std::set(input.begin(), input.end());
     unique_symbols.erase('.');
 
-    auto antinodes = std::string(input.size(), '.');
     // find antinodes per antenna
+    auto antinodes = std::string(input.size(), '.');
     for (const auto symbol : unique_symbols)
     {
         // find all indices of one antenna
@@ -77,13 +77,6 @@ size_t count_antinodes(const std::string& input, const ptrdiff_t row_size)
             }
         }
     }
-
-    //for (int idx = 0; const auto i : antinodes)
-    //{
-    //    std::cout << i << " ";
-    //    idx++;
-    //    if (idx % row_size == 0) std::cout << std::endl;
-    //}
 
     return std::ranges::count(antinodes, '#');
 }
