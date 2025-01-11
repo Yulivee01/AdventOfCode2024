@@ -1,5 +1,5 @@
 #pragma once
 
 #include <filesystem>
-#include <string>
 
+std::vector<int> read_input_day9(const std::filesystem::path& path);

@@ -42,5 +42,5 @@ TEST(day_8_part2, test_with_aoc_example)
 TEST(day_8_part2, test_with_full_input)
 {
     const auto input = read_input_day8("day8/input_day8.txt");
-    EXPECT_EQ(280, count_antinodes2(input.first, input.second));
+    EXPECT_EQ(958, count_antinodes2(input.first, input.second));
 }
